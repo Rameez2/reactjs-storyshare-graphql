@@ -7,9 +7,13 @@ import { AuthProvider } from './contexts/authContext';
 
 
 const client = new ApolloClient({
-  uri:process.env.REACT_APP_API_URL, // Replace with your GraphQL server URL
+  uri:'https://vercel-node-story-graphql-yyx6.vercel.app/', // Replace with your GraphQL server URL
+  // uri:process.env.REACT_APP_API_URL, // Replace with your GraphQL server URL
   cache: new InMemoryCache()
 });
+
+
+console.log('ashjfbhalsflas',process.env.REACT_APP_API_UR);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
