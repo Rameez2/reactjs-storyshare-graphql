@@ -1,0 +1,46 @@
+.userInfoContainer {
+    display: flex;
+    flex-direction: column;
+    
+}
+.userInfoContainer > h2,h4 {
+    margin: 0;
+}
+
+.userTable{
+    margin: 0 auto;
+    color: white;
+    font-family: "Moderustic", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    box-shadow: rgb(255 255 255 / 18%) 0px 2px 4px;
+    border-radius: 10px;
+    padding: 20px;
+    border-spacing: 20px;
+    position: relative;
+}
+
+.staticCell{
+    margin: 10px;
+}
+
+.userTable > button {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    background-color: #3679bd;
+    color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    align-self: center;
+    transition: 0.5s;
+}
+
+.userTable > button:hover {
+    background-color: #007ffd;
+    color: #ffffff;
+    transform: scale(1.08);
+}

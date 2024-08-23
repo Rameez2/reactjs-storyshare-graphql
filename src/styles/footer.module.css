@@ -1,0 +1,33 @@
+/* Footer Styles */
+.footer {
+    background-color: #1c2136;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: rgb(130 130 217 / 25%) 0px 30px 60px -12px inset, rgb(119 119 119 / 30%) 0px 18px 36px -18px inset;
+}
+
+.footerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footerText {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.footerLinks {
+    margin: 10px 0;
+}
+
+.footerLink {
+    margin: 0 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footerLink:hover {
+    text-decoration: underline;
+}

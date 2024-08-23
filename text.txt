@@ -1,0 +1,23 @@
+
+"react": "^18.3.1",
+
+/Home {
+    Hero Section
+    Featured Stories
+    Categories/Genres
+    Recent Comments
+    Top Rated Stories
+    Footer
+}
+
+story {
+    delete,getStory,createStory,[storyLikes]
+    // Not Using editStory
+}
+user {
+    getUser,createUser,loginUser,change password,[updateUserName, FavStories ]
+}
+comment {
+    createComment,getComment,deleteComment
+    // Not Using Update 
+}

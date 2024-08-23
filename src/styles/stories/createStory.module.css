@@ -1,0 +1,74 @@
+.container{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 20px;
+    border: transparent;
+    border-radius: 15px;
+    padding: 15px;
+}
+.container > h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    text-align: center;
+}
+
+.container > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.title,.moral {
+    width: 300px;
+    height: 40px;
+    font-size: 17px;
+    border: transparent;
+    border-radius: 6px;
+    margin: 0 0px 0 10px;
+    padding: 0 15px;
+}
+
+.content {
+    padding: 15px;
+    border: transparent;
+    border-radius: 15px;
+}
+
+.container > form button {
+    padding: 10px;
+    border-radius: 4px;
+    border: none;
+    color: #ebebeb;
+    background-color: #101010;
+    font-size: 25px;
+    cursor: pointer;
+    align-self: center;
+}
+.container > form button:hover {
+    color: #ffffff;
+    background-color: #2383ff;
+}
+
+/* Media query for screens smaller than 480px */
+@media (max-width: 480px) {
+    .title, .moral {
+        width: 100%; /* Full width to fit the smaller screen */
+        height: auto; /* Auto height to accommodate text */
+        font-size: 14px; /* Smaller font size */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .container > form {
+        gap: 10px; /* Reduce gap between elements */
+    }
+
+    .container > form button {
+        font-size: 20px; /* Smaller button text */
+        padding: 8px; /* Smaller button padding */
+    }
+    .content {
+        width: 100%;
+    }
+}

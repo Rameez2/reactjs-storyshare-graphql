@@ -1,0 +1,83 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0px 10px 0 10px;
+    position: sticky;
+    top: 0;
+    background-color: #1e232c;
+    z-index: 999;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+}
+
+.nav>h1 {
+    margin: 10px 0 10px 0;
+}
+
+.nav a {
+    color: #e5e7eb;
+    font-family: "Bebas Neue", sans-serif;
+    font-style: normal;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 30px;
+    transition: 0.5s;
+    display: inline-block;
+}
+
+.nav a:hover {
+    cursor: pointer;
+    /* text-shadow: 0 0 2px #fff, 0 0 4px #ff00ff, 0 0 6px #62ff00; */
+    transform: scale(1.08);
+    /* color: #00ff5c; */
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+}
+
+.logoutBtn {
+    color: #fff;
+    background-color: #0063ec;
+    border: transparent;
+    border-radius: 5px;
+    width: 80px;
+    height: 40px;
+    font-family: monospace;
+    font-weight: 900;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.logoutBtn:hover {
+    color: #fff;
+    background-color: #134994;
+}
+
+/* For screens 480px and below */
+@media (max-width: 700px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        /* position: relative; */
+    }
+
+    .nav>h1 {
+        font-size: 24px;
+        margin: 10px 0;
+        text-align: center;
+        border-bottom: 2px solid grey;
+    }
+
+    .nav a {
+        font-size: 24px;
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    .logoutBtn {
+        width: 100%;
+        height: 40px;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+}

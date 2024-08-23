@@ -1,0 +1,86 @@
+.registerContainer {
+  margin: 150px auto;
+  width: 60%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: linear-gradient(135deg, #3A3E41 0%, #2A2D30 49%, #242628 100%), linear-gradient(139deg, #434B54 1%, #2A2C2F 45%, #191B1E 75%);
+}
+
+.registerContainer h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Bebas Neue", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: white;
+}
+
+.registerContainer form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: flex-start;
+}
+  
+.inputsContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.inputsContainer > input {
+  background-color: #d7e1ec;
+  border: transparent;
+  border-radius: 7px;
+  padding: 8px;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: 700;
+}
+.inputsContainer > label {
+  color: white;
+  font-family: monospace;
+  font-size: 20px;
+}
+  
+.registerContainer button {
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  background-color: #363a3e;
+  color: #b4c0ce;
+  font-size: 25px;
+  cursor: pointer;
+  align-self: center;
+}
+  
+.registerContainer button:disabled {
+  background-color: #474747;
+  cursor: not-allowed;
+}
+.registerContainer button:hover {
+  background-color: #222427;
+  color: #dbdddf;
+}
+.errorText {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.successText {
+  color: green;
+  text-align: center;
+  margin-top: 10px;
+}
+  

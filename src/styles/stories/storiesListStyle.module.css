@@ -1,0 +1,68 @@
+.paginationBtnDiv{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.paginationBtn{
+    cursor: pointer;
+    font-size: 20px;
+    width: 40px;
+    height: 30px;
+    border: transparent;
+    border-radius: 5px;
+    background-color: #393d42;
+    color: #afbac8;
+    transition: 0.5s;
+}
+
+.storiesListComp {
+    display: flex;
+    margin: 10px;
+    height: 380px;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 25px;
+    border-radius: 20px;
+    /* box-shadow: rgb(81 81 81) 3px 3px 6px 0px inset, rgb(26 26 26 / 50%) -3px -3px 6px 1px inset; */
+}
+/* .storiesListComp::-webkit-scrollbar {
+    display: none;
+} */
+
+.paginationBtn:hover {
+    box-shadow: 0px 0px 15px 4px rgba(45,255,196,0.9);
+    background-color:rgba(45,255,196,0.9);
+    color: white;
+    transform: scale(1.08);
+}
+
+@media (min-width: 350px) and (max-width: 715px) {
+    .storiesListComp {
+        gap: 15px;
+        margin: 10px;
+        flex-direction: column;
+        align-items: center;
+        height: 440px;
+        overflow-y: auto;
+    }
+}
+/* 
+@media (min-width: 715px)  {
+    .storiesListComp {
+        display: flex;
+        margin: 10px;
+        height: 380px;
+        align-items: flex-start;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 20px;
+        overflow-x: scroll;
+        padding: 25px;
+        box-shadow: rgb(81 81 81) 3px 3px 6px 0px inset, rgb(26 26 26 / 50%) -3px -3px 6px 1px inset;
+        border-radius: 20px;
+    }
+} */
