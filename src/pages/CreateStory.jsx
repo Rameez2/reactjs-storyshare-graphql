@@ -17,9 +17,9 @@ const CREATE_STORY = gql`
 `;
 
 export default function CreateStory() {
-  const [title, setTitle] = useState('this is title');
+  const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [moral, setMoral] = useState('this is moral');
+  const [moral, setMoral] = useState('');
   const navigate = useNavigate();
 
   // Get token from localStorage

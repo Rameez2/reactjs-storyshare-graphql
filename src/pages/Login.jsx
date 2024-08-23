@@ -18,8 +18,8 @@ const LOGIN_MUTATION = gql`
 `;
 
 export default function Login() {
-  const [email, setEmail] = useState('new@gmail.com');
-  const [password, setPassword] = useState('pass123');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [login, { error }] = useMutation(LOGIN_MUTATION);
   const navigate = useNavigate();
   const { login: setAuth, user } = useContext(AuthContext);

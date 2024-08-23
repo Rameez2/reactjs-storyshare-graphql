@@ -18,9 +18,9 @@ const REGISTER_USER = gql`
 
 
 export default function Register() {
-    const [username, setUsername] = useState("kitty");
-    const [email, setEmail] = useState("meow1@gmail.com");
-    const [password, setPassword] = useState("pass123");
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const [createUser, { data, loading, error }] = useMutation(REGISTER_USER);
     const { login } = useContext(AuthContext);
     const navigate = useNavigate();
