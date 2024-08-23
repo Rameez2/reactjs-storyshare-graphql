@@ -7,8 +7,7 @@ import { AuthProvider } from './contexts/authContext';
 
 
 const client = new ApolloClient({
-  uri:'https://vercel-node-story-graphql-yyx6.vercel.app/', // Replace with your GraphQL server URL
-  // uri:'http://localhost:4000/', // Replace with your GraphQL server URL
+  uri:process.env.REACT_APP_API_URL, // Replace with your GraphQL server URL
   cache: new InMemoryCache()
 });
 
