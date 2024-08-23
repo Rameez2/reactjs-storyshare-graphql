@@ -30,7 +30,7 @@ export default function UserDetails({user}) {
 
         // Create an http link
         const httpLink = new HttpLink({
-            uri: 'http://localhost:4000/', // Your GraphQL server URL
+            uri: 'https://vercel-node-story-graphql-yyx6.vercel.app/', // Your GraphQL server URL
         });
 
         // Create Apollo client
