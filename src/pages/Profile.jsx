@@ -55,7 +55,7 @@ export default function Profile() {
   const { id } = useParams();
   const [profileUser, setProfileUser] = useState({});
 
-  const isCurrentUser = user && user._id === id;
+  const isCurrentUser = user && user.userId === id;
 
   const { loading, error,refetch } = useQuery(
     isCurrentUser ? GET_CURRENT_USER : GET_USER,
@@ -86,11 +86,16 @@ export default function Profile() {
       <UserDetails user={profileUser} />
       {isCurrentUser && <ChangePassword />}
       <div className={styles.moreContainer}>
-        <h1>MORE</h1>
         <div className={styles.links}>
-          {isCurrentUser && <Link to="/create-story">Create Story</Link>}
-          <Link to="/profile/my-stories">My Stories</Link>
-          <Link to="/profile/my-favorites-stories">Favorites Stories</Link>
+          {isCurrentUser && (
+            <>
+              <h1>MORE</h1>
+              <Link to="/create-story">Create Story</Link>
+              <Link to="/profile/my-stories">My Stories</Link>
+              <Link to="/profile/my-favorites-stories">Favorites Stories</Link>
+            </>
+        )
+          }
         </div>
       </div>
     </div>
