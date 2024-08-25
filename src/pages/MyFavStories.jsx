@@ -4,6 +4,7 @@ import styles from "../styles/profile/myfavstories.module.css";
 import { useState } from "react";
 import { AnimatePresence,motion } from "framer-motion";
 import Favorite from "../components/smallPieces/Favorite";
+import { useEffect } from "react";
 
 export const GET_FAVORITE_STORIES = gql`
   query favoriteStories {
@@ -36,6 +37,10 @@ export default function MyFavStories() {
         }
     });
 
+ // Refetch data on component load
+ useEffect(() => {
+  refetch();
+}, [refetch]); // Depend on refetch so it's only called when the function itself changes
     
     const favoriteStoryIds = token
     ? new Set(stories.map(story => story._id))

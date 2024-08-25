@@ -11,7 +11,7 @@ export default function Nav() {
       <h1><Link to="/create-story">Create Story</Link></h1>
       {user ? 
         <>
-          <h1><Link to="/profile">Profile</Link></h1>
+          <h1><Link to={`/profile/${user.userId}`}>Profile</Link></h1>
           <h1><Link to="/profile/my-favorites-stories">Favorties</Link></h1>
           <h1><button onClick={logout} className={styles.logoutBtn}>Log Out</button></h1>
         </>

@@ -23,7 +23,7 @@ export default function Like({isLiked,story}) {
     const token = localStorage.getItem("token")
     const navigate = useNavigate();
     const [liked, setLiked] = useState(isLiked || false);
-      const [likeStory] = useMutation(LIKE_STORY);
+    const [likeStory] = useMutation(LIKE_STORY);
   const [unlikeStory] = useMutation(UNLIKE_STORY);
 
     const handleLike = async () => {
@@ -67,9 +67,27 @@ export default function Like({isLiked,story}) {
         setLiked(false);
       };
 
+  function formatLikes(likes) {
+    if (likes >= 1_000_000) {
+      return (likes / 1_000_000).toFixed(1) + 'M'; // Format millions
+    } else if (likes >= 1_000) {
+      return (likes / 1_000).toFixed(1) + 'K'; // Format thousands
+    } else {
+      return likes; // Less than a thousand
+    }
+  }
+  // console.log('lies',story);
+  
   return (
     <>
-      {liked ? <i onClick={handleUnlike} className={`fa-solid fa-thumbs-up ${styles.like}`}></i> : <i onClick={handleLike} className={`fa-regular fa-thumbs-up ${styles.like}`}></i>}
+      {liked ?
+      <div>
+        <i onClick={handleUnlike} className={`fa-solid fa-heart ${styles.like}`}></i>
+        <span className={styles.likesCount}>{story.likes?.length}</span>
+      </div> 
+       : 
+        <i onClick={handleLike} className={`fa-regular fa-heart ${styles.like}`}></i>
+      }
     </>
   )
 }

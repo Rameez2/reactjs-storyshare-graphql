@@ -66,7 +66,6 @@ export default function Favorite({isFavorite,story}) {
           });
           // Optionally redirect or show a success message
           setFavorite(false);
-    
           // alert("Story REMOVED FROM Favourites");
         } catch (error) {
           console.error('Error removing story from favorites:', error);
@@ -75,7 +74,7 @@ export default function Favorite({isFavorite,story}) {
 
   return (
     <>
-      {favorite ? <i className={`fa-solid fa-heart ${styles.fav}`} onClick={handleRemoveFromFavorites}></i>:<i className={`fa-regular fa-heart ${styles.fav}`} onClick={handleAddToFavorites}></i>}
+      {favorite ? <i className={`fa-solid fa-bookmark ${styles.fav}`} onClick={handleRemoveFromFavorites}></i>:<i className={`fa-regular fa-bookmark ${styles.fav}`} onClick={handleAddToFavorites}></i>}
     </>
   )
 }

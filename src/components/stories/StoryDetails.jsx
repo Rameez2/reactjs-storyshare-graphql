@@ -1,12 +1,17 @@
 import styles from "../../styles/stories/storyDetails.module.css";
 import CommentsSection from "../comments/CommentsSection";
 import Favorite from "../smallPieces/Favorite";
+import Follow from "../smallPieces/Follow";
 import Like from "../smallPieces/Like";
-
-export default function StoryDetails({story,isFavorite,isLiked}) {
-  const token = localStorage.getItem('token');
+import { Link } from "react-router-dom";
 
 
+
+export default function StoryDetails({story,isFavorite,isLiked,isFollowed}) {
+  // const token = localStorage.getItem('token');
+  console.log('followers',story.author,isFollowed);
+  console.log('followed',isFollowed);
+  
   return (
       <div className={styles.storyDetailsContainer}>
         <div className={styles.storyContainer}>
@@ -18,12 +23,13 @@ export default function StoryDetails({story,isFavorite,isLiked}) {
             <p>Moral : <span>{story.moral}</span></p>
           </div>
           <div className={styles.authorContainer}>
-            <p>author: {story.author.username}</p>
+            <p>author: <Link to={`/profile/${story.author._id}`}>{story.author.username}</Link></p>
           </div>
         </div>
         <div className={styles.actionsContainer}>
           <Favorite story={story} isFavorite={isFavorite}/>
           <Like story={story} isLiked={isLiked}/>
+          <Follow authorId={story.author._id} isFollowed={isFollowed}/>
         </div>
       <CommentsSection story={story}/>
       </div>

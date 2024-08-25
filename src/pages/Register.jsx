@@ -37,7 +37,7 @@ export default function Register() {
 
             login(newToken,userId);
             alert("Registration successful!");
-            navigate("/profile");
+            navigate(`/profile/${userId}`);
             // Optionally, redirect to login page or another route
         } catch (err) {
             console.error(err);

@@ -1,7 +1,7 @@
 import { useQuery, gql } from "@apollo/client";
 import styles from "../../styles/stories/storiesListStyle.module.css";
 import StoriesCard from "./StoriesCard";
-import { useRef, useState } from "react";
+import { useRef, useState,useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 
@@ -46,7 +46,7 @@ export default function StoriesList() {
   const [showStories, setShowStories] = useState([]);
 
 
-  const { loading, error, data } = useQuery(
+  const { loading, error, refetch,data } = useQuery(
     token ? GET_STORIES_WITH_FAVORITES : GET_STORIES,
     {
       // variables: {
@@ -66,6 +66,11 @@ export default function StoriesList() {
       }
     }
   );
+
+ // Refetch data on component load
+ useEffect(() => {
+  refetch();
+}, [refetch]); // Depend on refetch so it's only called when the function itself changes
 
 // ******
 const scrollContainerRef = useRef(null);

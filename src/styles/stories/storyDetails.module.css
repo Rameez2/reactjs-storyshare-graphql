@@ -61,10 +61,11 @@ background-color: #f9706a;
 }
 .actionsContainer {
     display: flex;
-    width: fit-content;
+    width: --webkit-available;
     gap: 15px;
     border-bottom: 2px solid darkgrey;
     padding: 0 0 10px 0;
+    justify-content: center;
 }
 
 .story {
@@ -73,11 +74,3 @@ background-color: #f9706a;
     font-optical-sizing: auto;
     font-style: normal;
 }
-/* .commentsContainer{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    height: 400px;
-    border: 2px solid;
-    overflow-x: auto;
-} */

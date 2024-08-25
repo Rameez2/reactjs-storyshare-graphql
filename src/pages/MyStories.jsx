@@ -4,6 +4,7 @@ import StoryDelete from '../components/stories/StoryDelete';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 const GET_MY_STORIES = gql`
   query GetMyStories {
@@ -32,6 +33,11 @@ export default function MyStories() {
       setStories(data.mystories);
     }
   });
+ // Refetch data on component load
+ useEffect(() => {
+  refetch();
+}, [refetch]); // Depend on refetch so it's only called when the function itself changes
+
 
   function handleDeleteStory(storyId) {
     // Update local state to remove the deleted story

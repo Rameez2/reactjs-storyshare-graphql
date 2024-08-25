@@ -32,7 +32,8 @@ function AnimatedRoutes() {
         <Route path='/' element={<PageWrapper><Home /></PageWrapper>} />
         <Route path='/login' element={<PageWrapper><Login /></PageWrapper>} />
         <Route path='/register' element={<PageWrapper><Register /></PageWrapper>} />
-        <Route path='/profile' element={<PageWrapper><Profile /></PageWrapper>} />
+        <Route path='/profile/:id' element={<PageWrapper><Profile /></PageWrapper>} />
+        {/* <Route path='/profile' element={<PageWrapper><Profile /></PageWrapper>} /> */}
         <Route path='/profile/my-stories' element={<PageWrapper><MyStories /></PageWrapper>} />
         <Route path='/profile/my-favorites-stories' element={<PageWrapper><MyFavStories /></PageWrapper>} />
         <Route path='/stories/:id' element={<PageWrapper><StoryPage /></PageWrapper>} />
@@ -50,10 +51,6 @@ const PageWrapper = ({ children }) => {
       animate={{ opacity:1, scale: 1, rotate: -0 }}
       exit={{ opacity: 0, scale: 0.01, rotate: -180 }}
       transition={{ duration: 0.4}}
-      // initial={{ rotateY:90,scale:0.5,opacity:0.5 }}
-      // animate={{ rotateY:0 ,scale:1,opacity:1}}
-      // exit={{ rotateY:90 ,scale:0.5,opacity:0.5}}
-      // transition={{ duration: 0.4}}
     >
       {children}
     </motion.div>
