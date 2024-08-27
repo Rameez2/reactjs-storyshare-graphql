@@ -18,7 +18,7 @@ root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <AuthProvider>
-        <App />
+        <App/>
       </AuthProvider>
     </ApolloProvider>
   </React.StrictMode>

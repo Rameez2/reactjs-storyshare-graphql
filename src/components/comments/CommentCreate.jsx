@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/authContext";
 import styles from "../../styles/comment/commentCreate.module.css";
+import SubmitLoader from "../smallPieces/loaders/SubmitLoader";
 
 const CREATE_COMMENT = gql`
   mutation CreateComment($storyId: ID!, $content: String!) {
@@ -60,7 +61,7 @@ export default function CommentCreate({handleNewComment,storyId}) {
           />
         </div>
         <button className={styles.createCommentBtn} type="submit" disabled={loading}>
-          {loading ? 'Submitting...' : 'Submit Comment'}
+          {loading ? <SubmitLoader/> : 'Submit Comment'}
         </button>
         {loading && <p>Loading...</p>}
         {error && <p>Error: {error.message}</p>}

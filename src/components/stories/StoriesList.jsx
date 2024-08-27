@@ -3,6 +3,7 @@ import styles from "../../styles/stories/storiesListStyle.module.css";
 import StoriesCard from "./StoriesCard";
 import { useRef, useState,useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Loader1 from "../smallPieces/loaders/Loader1";
 
 
 const GET_STORIES = gql`
@@ -76,7 +77,7 @@ export default function StoriesList() {
 const scrollContainerRef = useRef(null);
 //****** */
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader1/>;
   if (error) return <p>Error: {error.message}</p>;
 
   const stories = data.stories || [];

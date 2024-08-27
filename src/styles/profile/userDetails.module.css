@@ -1,3 +1,10 @@
+.container {
+    background-color: transparent;
+    width: fit-content;
+    margin: 15px auto;
+    position: relative;
+}
+
 .userInfoContainer {
     display: flex;
     flex-direction: column;
@@ -15,7 +22,7 @@
     font-style: normal;
     box-shadow: rgb(255 255 255 / 18%) 0px 2px 4px;
     border-radius: 10px;
-    padding: 20px;
+    padding: 100px 20px 20px 20px;
     border-spacing: 20px;
     position: relative;
 }
@@ -24,10 +31,8 @@
     margin: 10px;
 }
 
-.userTable > button {
-    position: absolute;
+.container > button {
     bottom: 5px;
-    right: 5px;
     padding: 10px;
     border-radius: 4px;
     border: none;
@@ -35,12 +40,26 @@
     color: #ffffff;
     font-size: 20px;
     cursor: pointer;
-    align-self: center;
     transition: 0.5s;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    height: 45px;
 }
 
-.userTable > button:hover {
+.container > button:hover {
     background-color: #007ffd;
     color: #ffffff;
     transform: scale(1.08);
+}
+
+.profileImage{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: transparent;
+    border-radius: 50%;
+    top: 5px;
+    left: 10px;
 }

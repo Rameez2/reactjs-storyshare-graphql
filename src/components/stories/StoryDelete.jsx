@@ -1,5 +1,6 @@
 import {useMutation, gql } from '@apollo/client';
 import styles from "../../styles/stories/storyDelete.module.css";
+import DeleteLoader from '../smallPieces/loaders/DeleteLoader';
 
 // GraphQL Mutation for deleting a story
 const DELETE_STORY = gql`
@@ -40,12 +41,12 @@ export default function StoryDelete({storyId,handleDeleteStory}) {
     }
   };
 
-  if (loading) return <p>Loading...</p>;
+  // if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
   return (
     <>
-        <button className={styles.deleteBtn} onClick={handleDelete}><i className="fa-solid fa-trash"></i></button>
+        <button className={styles.deleteBtn} onClick={handleDelete}> {loading ? <DeleteLoader/>:<i className="fa-solid fa-trash"></i>} </button>
     </>
   )
 }

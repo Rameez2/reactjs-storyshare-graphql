@@ -1,6 +1,6 @@
 import HeroSection from "../components/HeroSection";
 import HomeIntro from "../components/HomeIntro";
-// import FeaturedStories from "../components/stories/FeaturedStories";
+// import FollowedAuthorsStory from "../components/stories/FollowedAuthorsStory";
 import StoriesList from "../components/stories/StoriesList";
 
 export default function Home() {
@@ -8,8 +8,9 @@ export default function Home() {
     <div>
       <HeroSection />
       <HomeIntro/>
-      {/* <FeaturedStories/> */}
       <StoriesList />
+      {/* Followed Authors stories */}
+      {/* <FollowedAuthorsStory/> */}
     </div>
   )
 }

@@ -3,6 +3,7 @@ import { useMutation, gql } from "@apollo/client";
 import styles from "../styles/loginSignup/registerStyle.module.css";
 import { AuthContext } from "../contexts/authContext";
 import { useNavigate } from "react-router-dom";
+import SubmitLoader from "../components/smallPieces/loaders/SubmitLoader";
 
 
 const REGISTER_USER = gql`
@@ -77,7 +78,7 @@ export default function Register() {
                     />
                 </div>
                 <button type="submit" disabled={loading}>
-                    {loading ? "Registering..." : "Register"}
+                    {loading ? <SubmitLoader/> : "Register"}
                 </button>
                 {error && <p className={styles.errorText}>Error: {error.message}</p>}
             </form>

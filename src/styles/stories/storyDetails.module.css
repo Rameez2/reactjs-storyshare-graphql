@@ -74,3 +74,22 @@ background-color: #f9706a;
     font-optical-sizing: auto;
     font-style: normal;
 }
+.authorName {
+    margin: 15px 0 0 0;
+    font-size: 20px;
+}
+.authorName > a{
+    border-radius: 4px;
+    border: none;
+    color: #ffffff;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0 0 0 7px;
+    transition: 0.5s;
+}
+
+.authorName:hover > a{
+    color: rgb(70, 70, 255);
+    font-size: 25px;
+}   

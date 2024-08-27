@@ -3,6 +3,7 @@ import { useMutation, gql } from '@apollo/client';
 import { useNavigate, Navigate } from 'react-router-dom';
 import { AuthContext } from "../contexts/authContext";
 import styles from "../styles/loginSignup/login.module.css";
+import SubmitLoader from "../components/smallPieces/loaders/SubmitLoader";
 
 const LOGIN_MUTATION = gql`
   mutation Login($email: String!, $password: String!) {
@@ -20,7 +21,7 @@ const LOGIN_MUTATION = gql`
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [login, { error }] = useMutation(LOGIN_MUTATION);
+  const [login, { error ,loading}] = useMutation(LOGIN_MUTATION);
   const navigate = useNavigate();
   const { login: setAuth, user } = useContext(AuthContext);
 
@@ -62,7 +63,9 @@ export default function Login() {
                 required
               />
             </div>
-            <button type="submit">Login</button>
+            <button type="submit" disabled={loading}>
+                    {loading ? <SubmitLoader/> : "Login"}
+            </button>
           </form>
           {error && <p className={styles.errorMessage}>Error: {error.message}</p>}
         </div>

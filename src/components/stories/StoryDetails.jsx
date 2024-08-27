@@ -23,7 +23,7 @@ export default function StoryDetails({story,isFavorite,isLiked,isFollowed}) {
             <p>Moral : <span>{story.moral}</span></p>
           </div>
           <div className={styles.authorContainer}>
-            <p>author: <Link to={`/profile/${story.author._id}`}>{story.author.username}</Link></p>
+            <p className={styles.authorName}>author: <Link to={`/profile/${story.author._id}`}>{story.author.username}</Link></p>
           </div>
         </div>
         <div className={styles.actionsContainer}>

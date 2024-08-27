@@ -25,12 +25,16 @@ comment {
 
 [showStory Likes]
 
-
-PROFILE BUG (when i was logged in i wasnt able to view other users profile) *** SOLVED ***
-
-
 User Feedbacks Work
 Refetching ON useEffect for latest data ,because of users feedbacks
 also added (Like,unLike Story)
 also added (Fav,unFav Story)
 Added (Follow,UnFollow feature due to users demand)
+
+{
+Image Upload 
+See Followed people stories on Home
+User profile (onClic Show Followings/Followers List)
+User Profile EDIT
+}
+Toogel SWITCHES (LIGHT/DARK THEWME)

@@ -2,6 +2,8 @@ import { useContext } from "react"
 import { AuthContext } from "../../contexts/authContext";
 import styles from "../../styles/comment/commentCard.module.css"
 import { useMutation, gql } from '@apollo/client';
+import DeleteLoader from "../smallPieces/loaders/DeleteLoader";
+import { timeAgo } from "../../utils/timeAgo";
 
 const DELETE_COMMENT = gql`
   mutation DeleteComment($id: ID!) {
@@ -15,7 +17,7 @@ export default function CommentCard({ handleRemoveComment, comment }) {
 
   const { user } = useContext(AuthContext);
 
-  const [deleteComment] = useMutation(DELETE_COMMENT, {
+  const [deleteComment,{loading}] = useMutation(DELETE_COMMENT, {
     context: {
       headers: {
         Authorization: user?.token ? `Bearer ${user?.token}` : '',
@@ -45,11 +47,11 @@ export default function CommentCard({ handleRemoveComment, comment }) {
             </div>
             <div className={styles.userInfoContainer}>
               <h3>{comment.author.username}</h3>
-              <p>2 hours ago</p>
+              <p>{timeAgo(comment?.createdAt)}</p>
             </div>
             {/* <div><i class="fa-regular fa-heart"></i></div> */}
             <div>
-              <button onClick={handleDelete} className={styles.deleteComment}><i className="fa-solid fa-trash"></i></button>
+              <button onClick={handleDelete} className={styles.deleteComment}>{loading ? <DeleteLoader/>:<i className="fa-solid fa-trash"></i>}</button>
             </div>
           </div>
 

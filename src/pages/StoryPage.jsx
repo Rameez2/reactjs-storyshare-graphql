@@ -3,6 +3,7 @@ import { useQuery,gql } from "@apollo/client";
 import { useParams } from 'react-router-dom';
 import StoriesList from '../components/stories/StoriesList';
 import { useEffect } from 'react';
+import Loader1 from '../components/smallPieces/loaders/Loader1';
 
 
 const GET_STORY_DETAILS = gql`
@@ -91,7 +92,7 @@ export default function StoryPage() {
   refetch();
 }, [refetch]); // Depend on refetch so it's only called when the function itself changes
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader1/>;
   if (error) return <p>Error: {error.message}</p>;
 
   const { story } = data;

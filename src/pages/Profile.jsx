@@ -5,6 +5,7 @@ import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../contexts/authContext";
 import styles from "../styles/profile/profile.module.css";
 import { gql, useQuery } from '@apollo/client';
+import Loader1 from "../components/smallPieces/loaders/Loader1";
 
 const GET_USER = gql`
   query user($_id: ID!) {
@@ -72,12 +73,12 @@ export default function Profile() {
     }
   );
 
- // Refetch data on component load
- useEffect(() => {
-  refetch();
-}, [refetch]); // Depend on refetch so it's only called when the function itself changes
+  // Refetch data on component load
+  useEffect(() => {
+    refetch();
+  }, [refetch]); // Depend on refetch so it's only called when the function itself changes
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Loader1/>;
   if (error) return <p>Error: {error.message}</p>;
 
   return (
@@ -86,10 +87,11 @@ export default function Profile() {
       <UserDetails user={profileUser} />
       {isCurrentUser && <ChangePassword />}
       <div className={styles.moreContainer}>
+          {isCurrentUser && <h1>MORE</h1>}
         <div className={styles.links}>
-          {isCurrentUser && (
+          {isCurrentUser && 
+        (
             <>
-              <h1>MORE</h1>
               <Link to="/create-story">Create Story</Link>
               <Link to="/profile/my-stories">My Stories</Link>
               <Link to="/profile/my-favorites-stories">Favorites Stories</Link>
@@ -99,5 +101,6 @@ export default function Profile() {
         </div>
       </div>
     </div>
+
   );
 }

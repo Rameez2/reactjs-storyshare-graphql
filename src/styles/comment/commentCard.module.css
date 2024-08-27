@@ -9,6 +9,7 @@
     border-radius: 20px;
     padding: 8px;
     position: relative;
+    background-color: #272727;
 }
 .userImage {
     width: 50px;

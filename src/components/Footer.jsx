@@ -1,4 +1,5 @@
 import styles from "../styles/footer.module.css";
+import SocialLinks from "./smallPieces/SocialLinks";
 
 export default function Footer() {
   return (
@@ -13,6 +14,8 @@ export default function Footer() {
             <a href="/privacy" className={styles.footerLink}>Privacy Policy</a>
         </div>
     </div>
+
+    <SocialLinks/>
 </footer>
 
   )

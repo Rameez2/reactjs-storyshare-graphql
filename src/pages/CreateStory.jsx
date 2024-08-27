@@ -3,6 +3,7 @@ import { AuthContext } from "../contexts/authContext"
 import { useMutation, gql } from '@apollo/client';
 import { useNavigate, Link } from "react-router-dom";
 import styles from "../styles/stories/createStory.module.css";
+import Loader1 from "../components/smallPieces/loaders/Loader1";
 
 
 const CREATE_STORY = gql`
@@ -77,9 +78,9 @@ export default function CreateStory() {
               required={true}
               onChange={(e) => setMoral(e.target.value)}
             />
-            <button type="submit" disabled={loading}>
-              {loading ? 'Creating...' : 'Create Story'}
-            </button>
+            {/* <button type="submit" disabled={loading}> */}
+              {loading ? <Loader1/> : <button type="submit" disabled={loading}>Create Story</button>}
+            
           </form>
           {error && <p>Error: {error.message}</p>}
         </div> :

@@ -1,11 +1,11 @@
 import styles from "../../styles/profile/userDetails.module.css";
 
 export default function UserDetails({user}) {
-
+  const currentUser = localStorage.getItem("userId");
   return (
     <>
     {user ?
-      <>
+      <div className={styles.container}>
         <table className={styles.userTable}>
         <tbody>
           <tr>
@@ -25,9 +25,10 @@ export default function UserDetails({user}) {
             <td>{user?.email}</td>
           </tr>
         </tbody>
-      <button>Edit</button>
         </table>
-    </>
+        {currentUser === user._id && <button>Edit</button>}
+        <img className={styles.profileImage} src="https://e0.pxfuel.com/wallpapers/114/1012/desktop-wallpaper-general-assassin-s-creed-star-wars-kylo-ren-thumbnail.jpg" alt="" />
+      </div>
     :
     <></>  
   }
