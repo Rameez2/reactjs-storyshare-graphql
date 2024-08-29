@@ -6,6 +6,7 @@ import { AuthContext } from "../contexts/authContext";
 import styles from "../styles/profile/profile.module.css";
 import { gql, useQuery } from '@apollo/client';
 import Loader1 from "../components/smallPieces/loaders/Loader1";
+// import ProfileFollow from "../components/profile/ProfileFollow";
 
 const GET_USER = gql`
   query user($_id: ID!) {
@@ -55,6 +56,7 @@ export default function Profile() {
   const { user } = useContext(AuthContext);
   const { id } = useParams();
   const [profileUser, setProfileUser] = useState({});
+  // const [followWindow,setFollowWindow] = useState(null);
 
   const isCurrentUser = user && user.userId === id;
 
@@ -78,6 +80,11 @@ export default function Profile() {
     refetch();
   }, [refetch]); // Depend on refetch so it's only called when the function itself changes
 
+  // function closeFollowWindow(windowText) {
+    
+  // }
+  
+
   if (loading) return <Loader1/>;
   if (error) return <p>Error: {error.message}</p>;
 
@@ -100,6 +107,7 @@ export default function Profile() {
           }
         </div>
       </div>
+      {/* {followWindow ? <ProfileFollow headerText="Followings" itemsList={profileUser.followings}/> : <></>} */}
     </div>
 
   );

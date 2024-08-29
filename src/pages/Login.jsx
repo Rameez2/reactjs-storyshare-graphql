@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { useMutation, gql } from '@apollo/client';
-import { useNavigate, Navigate } from 'react-router-dom';
+import { useNavigate, Navigate,Link } from 'react-router-dom';
 import { AuthContext } from "../contexts/authContext";
 import styles from "../styles/loginSignup/login.module.css";
 import SubmitLoader from "../components/smallPieces/loaders/SubmitLoader";
@@ -67,6 +67,7 @@ export default function Login() {
                     {loading ? <SubmitLoader/> : "Login"}
             </button>
           </form>
+          <Link to="/register" style={{"color":"white"}}>Register</Link>
           {error && <p className={styles.errorMessage}>Error: {error.message}</p>}
         </div>
       }

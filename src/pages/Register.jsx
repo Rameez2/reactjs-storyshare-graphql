@@ -4,7 +4,7 @@ import styles from "../styles/loginSignup/registerStyle.module.css";
 import { AuthContext } from "../contexts/authContext";
 import { useNavigate } from "react-router-dom";
 import SubmitLoader from "../components/smallPieces/loaders/SubmitLoader";
-
+import { Link } from "react-router-dom";
 
 const REGISTER_USER = gql`
   mutation RegisterUser($username: String!, $email: String!, $password: String!) {
@@ -82,6 +82,7 @@ export default function Register() {
                 </button>
                 {error && <p className={styles.errorText}>Error: {error.message}</p>}
             </form>
+            <Link to="/login" style={{"color":"white"}}>Login</Link>
             {data && <p className={styles.successText}>Registration successful!</p>}
         </div>
     )

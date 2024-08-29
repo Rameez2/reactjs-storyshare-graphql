@@ -45,10 +45,12 @@
     font-size: 25px;
     cursor: pointer;
     align-self: center;
+    transition: 0.5s;
 }
 .container > form button:hover {
     color: #ffffff;
     background-color: #2383ff;
+    transform: scale(1.05);
 }
 
 /* Media query for screens smaller than 480px */

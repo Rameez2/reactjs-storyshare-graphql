@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useMutation,gql } from '@apollo/client';
 import styles from "../../styles/profile/changePassword.module.css";
+import SubmitLoader from "../smallPieces/loaders/SubmitLoader";
 
 const UPDATE_USER = gql`
 mutation updateUser(
@@ -73,7 +74,7 @@ export default function ChangePassword() {
                     onChange={(e) => setNewPassword(e.target.value)}
                     required={true}
                 />
-                <button type="submit" disabled={loading}>Change Password</button>
+                <button type="submit">{loading ? <SubmitLoader/>:'Change Password'}</button>
             </form>
             {error && <p>Error: {error.message}</p>}
         </div>

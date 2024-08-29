@@ -19,53 +19,52 @@ const UNLIKE_STORY = gql`
   }
 `;
 
-export default function Like({isLiked,story}) {
-    const token = localStorage.getItem("token")
-    const navigate = useNavigate();
-    const [liked, setLiked] = useState(isLiked || false);
-    const [likeStory] = useMutation(LIKE_STORY);
+export default function Like({ isLiked, story }) {
+  const token = localStorage.getItem("token")
+  const navigate = useNavigate();
+  const [liked, setLiked] = useState(isLiked || false);
+  const [likeStory] = useMutation(LIKE_STORY);
   const [unlikeStory] = useMutation(UNLIKE_STORY);
 
-    const handleLike = async () => {
-        try {
-          if(!token) {
-            navigate("/login");
-          }
-          await likeStory({
-             variables: { _id: story._id },
-            context: {
-              headers: {
-                Authorization: token ? `Bearer ${token}` : '',
-              },
-            }
-           });
-          setLiked(true);
-        } catch (error) {
-          console.log(error);
-          
+  const handleLike = async () => {
+    try {
+      if (!token) {
+        navigate("/login");
+      }
+      setLiked(true);
+      await likeStory({
+        variables: { _id: story._id },
+        context: {
+          headers: {
+            Authorization: token ? `Bearer ${token}` : '',
+          },
         }
-      };
-      
-      const handleUnlike = async () => {
-        try {
-          if(!token) {
-            navigate("/login");
-          }
-          await unlikeStory({ 
-            variables: { _id: story._id },
-            context: {
-              headers: {
-                Authorization: token ? `Bearer ${token}` : '',
-              },
-            }
-           });
-        } catch (error) {
-            console.log(error);
-            
+      });
+    } catch (error) {
+      console.log(error);
+
+    }
+  };
+
+  const handleUnlike = async () => {
+    try {
+      if (!token) {
+        navigate("/login");
+      }
+      setLiked(false);
+      await unlikeStory({
+        variables: { _id: story._id },
+        context: {
+          headers: {
+            Authorization: token ? `Bearer ${token}` : '',
+          },
         }
-      
-        setLiked(false);
-      };
+      });
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   function formatLikes(likes) {
     if (likes >= 1_000_000) {
@@ -77,15 +76,15 @@ export default function Like({isLiked,story}) {
     }
   }
   // console.log('lies',story);
-  
+
   return (
     <>
       {liked ?
-      <div>
-        <i onClick={handleUnlike} className={`fa-solid fa-heart ${styles.like}`}></i>
-        <span className={styles.likesCount}>{story.likes?.length}</span>
-      </div> 
-       : 
+        <div>
+          <i onClick={handleUnlike} className={`fa-solid fa-heart ${styles.like}`}></i>
+          <span className={styles.likesCount}>{story.likes?.length}</span>
+        </div>
+        :
         <i onClick={handleLike} className={`fa-regular fa-heart ${styles.like}`}></i>
       }
     </>

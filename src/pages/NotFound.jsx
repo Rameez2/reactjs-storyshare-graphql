@@ -5,11 +5,11 @@ export default function NotFound() {
   return (
     <div className={styles.pageNotFound}>
       <div>
-        <h1>This page is like a unicorn – it doesn't exist! 🦄"</h1>
+        <h1>"This page is like a unicorn – it doesn't exist! 🦄"</h1>
         <p>It seems like you've discovered a mythical realm where this page just doesn’t exist.
            🦄✨ Don’t worry, though – the rest of our site is full of amazing content that’s definitely not made up.
             🧙‍♂️🌟 Use the navigation above or check out the links below to find your way back to
-           something magical. 🗺️🔮 If you need further assistance, our support team is just a click away! 🖱️👨‍💻</p>
+           something magical. 🗺️🔮</p>
       </div>
       <div className={styles.loaderContainer}>
         <span className={styles.loader}></span>

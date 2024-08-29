@@ -96,7 +96,6 @@ export default function StoryPage() {
   if (error) return <p>Error: {error.message}</p>;
 
   const { story } = data;
-  console.log(story);
   
     // Check if the story is in the user's favorites
     const favoriteStoryIds = token

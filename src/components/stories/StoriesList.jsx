@@ -116,6 +116,9 @@ const scrollContainerRef = useRef(null);
     }
   };
 
+  console.log('stories',showStories);
+  
+
   return (
     <>
 

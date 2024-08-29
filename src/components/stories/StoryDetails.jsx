@@ -9,8 +9,6 @@ import { Link } from "react-router-dom";
 
 export default function StoryDetails({story,isFavorite,isLiked,isFollowed}) {
   // const token = localStorage.getItem('token');
-  console.log('followers',story.author,isFollowed);
-  console.log('followed',isFollowed);
   
   return (
       <div className={styles.storyDetailsContainer}>

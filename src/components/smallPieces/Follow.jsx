@@ -72,7 +72,6 @@ export default function Follow({authorId,isFollowed}) {
             console.error('Error unfollowing user:', err);
           }
     }
-    console.log('fff',follow);
     
   return (
     <>

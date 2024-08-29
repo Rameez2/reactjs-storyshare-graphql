@@ -35,6 +35,7 @@ export default function Favorite({isFavorite,story}) {
           if(!token) {
             navigate("/login");
           }
+          setFavorite(true);
           await addStoryToFavorites({
             variables: { storyId:story._id },
             context: {
@@ -44,8 +45,6 @@ export default function Favorite({isFavorite,story}) {
             },
           });
           // Optionally redirect or show a success message
-          setFavorite(true);
-          // alert("story Added to Favourties");
         } catch (error) {
           console.error('Error adding story to favorites:', error);
         }
@@ -56,6 +55,7 @@ export default function Favorite({isFavorite,story}) {
           if(!token) {
             navigate("/login");
           }
+          setFavorite(false);
           await removeStoryFromFavorites({
             variables: { storyId:story._id },
             context: {
@@ -65,8 +65,6 @@ export default function Favorite({isFavorite,story}) {
             },
           });
           // Optionally redirect or show a success message
-          setFavorite(false);
-          // alert("Story REMOVED FROM Favourites");
         } catch (error) {
           console.error('Error removing story from favorites:', error);
         }
